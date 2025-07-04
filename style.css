@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #e6efe0;
+  color: #111;
+}
+
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #dbe9d3;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 1rem;
+  background: black;
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.gallery img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.bio {
+  padding: 2rem;
+  background: #f7f7f7;
+  text-align: center;
+}
+
+.bio ul {
+  list-style: disc;
+  margin: 1rem auto;
+  max-width: 600px;
+  text-align: left;
+}
+
+.contact {
+  padding: 2rem;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: auto;
+}
+
+input, textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #dbe9d3;
+}
+
+button {
+  background: black;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #f0f0f0;
+  font-size: 0.9rem;
+}
