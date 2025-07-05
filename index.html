@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mansi's Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#dbe9d3" />
 </head>
 <body>
   <header>
@@ -46,5 +48,12 @@
     <p>Email: <a href="mailto:msalunke6097@gmail.com">msalunke6097@gmail.com</a></p>
     <p>Made with ❤️</p>
   </footer>
+  <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(() => console.log("✅ Service Worker Registered"))
+      .catch((error) => console.error("❌ Service Worker Error:", error));
+  }
+</script>
 </body>
 </html>
