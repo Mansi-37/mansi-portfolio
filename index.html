@@ -75,20 +75,30 @@
   // ✅ Get Firebase Messaging instance
   const messaging = firebase.messaging();
 
-  // ✅ Request permission and get token
-  Notification.requestPermission().then(permission => {
-    if (permission === "granted") {
+</script>
+  <script>
+  // Register your firebase-messaging-sw.js first
+  navigator.serviceWorker.register('firebase-messaging-sw.js')
+    .then((registration) => {
+      console.log("✅ Service Worker Registered");
+
+      // Initialize Firebase messaging with custom registration
+      const messaging = firebase.messaging();
+
       messaging.getToken({
-        vapidKey: "YBArAhK2GOlUgv6DmsTfcDqTTqOV5Cd8pd_1lIzlS1M1Qw9-WKEk90kFtxVzG6kFzug8-amPAvMR2laoFY9RQQuk"
-      }).then((token) => {
+        vapidKey: "YBArAhK2GOlUgv6DmsTfcDqTTqOV5Cd8pd_1lIzlS1M1Qw9-WKEk90kFtxVzG6kFzug8-amPAvMR2laoFY9RQQuk", // replace this with your real key
+        serviceWorkerRegistration: registration
+      })
+      .then((token) => {
         console.log("📩 FCM Token:", token);
-      }).catch((error) => {
-        console.error("❌ Error getting token:", error);
+      })
+      .catch((err) => {
+        console.error("❌ Error getting token:", err);
       });
-    } else {
-      console.warn("❌ Notification permission not granted");
-    }
-  });
+    })
+    .catch((err) => {
+      console.error("❌ Failed to register service worker:", err);
+    });
 </script>
 
 </body>
