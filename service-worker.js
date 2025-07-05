@@ -1,6 +1,6 @@
 const cacheName = "portfolio-cache-v1";
 const filesToCache = [
-  "portfolio.html",
+  "index.html",
   "style.css",
   "flowers.jpg",
   "fad23642f33526d518a2345908cde73d.jpg",
