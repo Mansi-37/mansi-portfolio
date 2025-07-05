@@ -7,16 +7,15 @@ const filesToCache = [
   "Cafe.jpg",
   "fashion(myproject).jpeg",
   "icon-192.png",
-  "icon-512.png",
-    "gcm_sender_id": "103953800507"
+  "icon-512.png"
 ];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(cacheName).then((cache) => {
-      return cache.addAll(filesToCache).catch((err) => {
-        console.error("❌ Failed to cache files:", err);
-      });
+      return cache.addAll(filesToCache);
+    }).catch((err) => {
+      console.error("❌ Failed to cache files:", err);
     })
   );
 });
@@ -28,3 +27,4 @@ self.addEventListener("fetch", (event) => {
     })
   );
 });
+
