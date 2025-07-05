@@ -1,7 +1,7 @@
 {
   "name": "Mansi's Portfolio",
   "short_name": "Portfolio",
-  "start_url": "portfolio.html",
+  "start_url": "index.html",
   "display": "standalone",
   "background_color": "#e6efe0",
   "theme_color": "#dbe9d3",
