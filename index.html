@@ -55,5 +55,41 @@
       .catch((error) => console.error("❌ Service Worker Error:", error));
   }
 </script>
+  <!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-messaging-compat.js"></script>
+
+<script>
+  // ✅ Your Firebase config
+  const firebaseConfig = {
+    apiKey: "AIzaSyA7kKNEC3mQIXrI_DLDTFvJBF_5QD3i5Xw",
+    authDomain: "mansi-pwa.firebaseapp.com",
+    projectId: "mansi-pwa",
+    messagingSenderId: "1096969535516",
+    appId: "1:1096969535516:web:b1a1ce87503f66e5f7dfd9"
+  };
+
+  // ✅ Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  // ✅ Get Firebase Messaging instance
+  const messaging = firebase.messaging();
+
+  // ✅ Request permission and get token
+  Notification.requestPermission().then(permission => {
+    if (permission === "granted") {
+      messaging.getToken({
+        vapidKey: "YBArAhK2GOlUgv6DmsTfcDqTTqOV5Cd8pd_1lIzlS1M1Qw9-WKEk90kFtxVzG6kFzug8-amPAvMR2laoFY9RQQuk"
+      }).then((token) => {
+        console.log("📩 FCM Token:", token);
+      }).catch((error) => {
+        console.error("❌ Error getting token:", error);
+      });
+    } else {
+      console.warn("❌ Notification permission not granted");
+    }
+  });
+</script>
+
 </body>
 </html>
