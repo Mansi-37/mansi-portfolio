@@ -7,7 +7,8 @@ const filesToCache = [
   "Cafe.jpg",
   "fashion(myproject).jpeg",
   "icon-192.png",
-  "icon-512.png"
+  "icon-512.png",
+    "gcm_sender_id": "103953800507"
 ];
 
 self.addEventListener("install", (event) => {
