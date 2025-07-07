@@ -100,6 +100,18 @@
       console.error("❌ Failed to register service worker:", err);
     });
 </script>
+<script>
+  // Listen for messages from service worker
+  navigator.serviceWorker.addEventListener("message", (event) => {
+    console.log("📩 Push message received in portfolio:", event.data);
+
+    // OPTIONAL: Show on your webpage too
+    const messageBox = document.getElementById("push-message");
+    if (messageBox) {
+      messageBox.textContent = `🔔 ${event.data.title}: ${event.data.body}`;
+    }
+  });
+</script>
 
 </body>
 </html>
